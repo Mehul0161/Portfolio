@@ -82,7 +82,7 @@ export default function CharacterScene() {
     <div className="w-full h-[400px]">
       <Canvas
         camera={{ position: [0, 0, 5], fov: 50 }}
-        onError={(error) => setError(error)}
+        onError={(error: Error) => setError(error)}
       >
         <Suspense fallback={null}>
           <ambientLight intensity={0.5} />
