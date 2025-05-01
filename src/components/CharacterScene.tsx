@@ -54,19 +54,28 @@ export default function CharacterScene() {
   useEffect(() => {
     const handleContextLost = (event: Event) => {
       event.preventDefault()
+      setError(new Error('WebGL context lost'))
       console.log('WebGL context lost, attempting to recover...')
     }
 
     const handleContextRestored = () => {
+      setError(null)
       console.log('WebGL context restored')
+    }
+
+    const handleContextError = (event: Event) => {
+      setError(new Error('WebGL context error'))
+      console.error('WebGL context error:', event)
     }
 
     window.addEventListener('webglcontextlost', handleContextLost)
     window.addEventListener('webglcontextrestored', handleContextRestored)
+    window.addEventListener('webglcontextcreationerror', handleContextError)
 
     return () => {
       window.removeEventListener('webglcontextlost', handleContextLost)
       window.removeEventListener('webglcontextrestored', handleContextRestored)
+      window.removeEventListener('webglcontextcreationerror', handleContextError)
     }
   }, [])
 
@@ -82,10 +91,6 @@ export default function CharacterScene() {
     <div className="w-full h-[400px]">
       <Canvas
         camera={{ position: [0, 0, 5], fov: 50 }}
-        onError={(event: React.SyntheticEvent<HTMLDivElement, Event>) => {
-          const error = new Error('Failed to load 3D scene')
-          setError(error)
-        }}
       >
         <Suspense fallback={null}>
           <ambientLight intensity={0.5} />
