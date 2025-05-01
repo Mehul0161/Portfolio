@@ -82,7 +82,10 @@ export default function CharacterScene() {
     <div className="w-full h-[400px]">
       <Canvas
         camera={{ position: [0, 0, 5], fov: 50 }}
-        onError={(error: Error) => setError(error)}
+        onError={(event: React.SyntheticEvent<HTMLDivElement, Event>) => {
+          const error = new Error('Failed to load 3D scene')
+          setError(error)
+        }}
       >
         <Suspense fallback={null}>
           <ambientLight intensity={0.5} />
