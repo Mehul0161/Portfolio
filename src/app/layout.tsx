@@ -2,11 +2,15 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['300', '400', '600', '800'],
+  variable: '--font-inter'
+})
 
 export const metadata: Metadata = {
-  title: 'Mehul Portfolio',
-  description: 'Welcome to my personal portfolio website',
+  title: 'MEHUL | Portfolio',
+  description: 'Software Engineer specializing in AI and Browser Automation',
 }
 
 export default function RootLayout({
@@ -21,4 +25,4 @@ export default function RootLayout({
       </body>
     </html>
   )
-} 
+}

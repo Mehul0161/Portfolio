@@ -8,13 +8,17 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#0070f3',
-        secondary: '#00b4d8',
+        brand: '#ff5a1f',
+        charcoal: '#121212',
+        grainy: '#1a1a1a',
+        muted: '#a0a0a0',
+        light: '#d1d1d1',
       },
       fontFamily: {
-        sans: ['var(--font-inter)'],
+        sans: ['var(--font-inter)', 'Inter', 'sans-serif'],
+        impact: ['Impact', 'Haettenschweiler', 'Arial Narrow Bold', 'sans-serif'],
       },
     },
   },
   plugins: [],
-} 
+}
