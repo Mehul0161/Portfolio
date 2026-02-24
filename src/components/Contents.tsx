@@ -9,7 +9,6 @@ const Contents = () => {
         { id: "02", name: "Projects", desc: "AI Code Gen, Browser Agents, ML Models.", href: "#projects" },
         { id: "03", name: "Skills", desc: "Python, AI Agents, LangChain, DevOps.", href: "#skills" },
         { id: "04", name: "Education", desc: "MSIT (B.Tech CS), PUSA (Mechanical).", href: "#education" },
-        { id: "05", name: "Contact", desc: "mehul.gupta.56614@gmail.com, Delhi.", href: "#contact" },
     ];
 
     return (

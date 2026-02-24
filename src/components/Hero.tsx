@@ -29,15 +29,8 @@ const Hero = () => {
                 {/* Secondary Border like in reference */}
                 <div className="absolute inset-1 border border-white/5 rounded-[inherit] pointer-events-none" />
 
-                <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start relative z-10 px-4 py-6">
-                    {/* Top links style bar */}
-                    <div className="absolute top-0 left-0 right-0 flex gap-4 p-4 text-[9px] font-black uppercase tracking-widest text-white/30 border-b border-white/5">
-                        <span className="flex items-center gap-1 cursor-not-allowed"><FiArrowUpRight /> More Like This</span>
-                        <span className="flex items-center gap-1 cursor-not-allowed"><FiExternalLink /> Save</span>
-                        <span className="flex items-center gap-1 cursor-not-allowed"><FiExternalLink /> Permalink</span>
-                    </div>
-
-                    <div className="w-full lg:w-[35%] mt-10">
+                <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start relative z-10 px-4 py-8">
+                    <div className="w-full lg:w-[35%]">
                         <motion.div
                             whileHover={{ scale: 1.02, rotate: -0.5 }}
                             className="aspect-[4/5] bg-neutral-900 rounded-xl overflow-hidden border border-white/10 shadow-2xl relative"
@@ -45,13 +38,13 @@ const Hero = () => {
                             <img
                                 alt="MEHUL"
                                 className="w-full h-full object-cover grayscale brightness-90 contrast-125 group-hover:grayscale-0 transition-all duration-700"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfK-IBZkb4xhM66qGi-3nE5n5jxVb1LJAl6xg18c7gT4mYssLZZgOoYR6C_zOiUp-zhvwthSJopmso9iq6KqeuZm5KLKH8XRLN2HTf5gsqEpib2jue7D4VViFYNgjsFNGl6wi-wz7OC_fnWkDyzJUEv6USMUdY4l8nhr1Jtu4O_WlAyUJHF4q6csHCVdN9W79hzQJIx7FJMUuin7-IhFy5mCdcF-aJoR6mrO61vc5D-4ElyyKTvCIuYl8CaxoVkkrEc5RTJ-HkRVl4"
+                                src="/me.pic.png"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-charcoal/40 to-transparent" />
                         </motion.div>
                     </div>
 
-                    <div className="flex-1 mt-10 flex flex-col justify-between">
+                    <div className="flex-1 flex flex-col justify-between">
                         <div>
                             <motion.h1
                                 initial={{ x: 20 }}
@@ -69,9 +62,9 @@ const Hero = () => {
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-2xl">
                             {[
                                 { label: "mehul.gupta.56614@gmail.com", href: "mailto:mehul.gupta.56614@gmail.com" },
-                                { label: "@linkedin/mehul", href: "https://www.linkedin.com/in/mehul-gupta-605698269/" },
+                                { label: "linkedin.com/in/mehul", href: "https://www.linkedin.com/in/mehul-gupta-605698269/" },
                                 { label: "github.com/Mehul0161", href: "https://github.com/Mehul0161" },
-                                { label: "(+91) 98187-62675", href: "tel:+919818762675" }
+                                { label: "(+91) 98187 62675", href: "tel:+919818762675" }
                             ].map((link, i) => (
                                 <motion.a
                                     key={link.label}
@@ -93,12 +86,12 @@ const Hero = () => {
                         <h3 className="text-lg font-black text-white italic uppercase tracking-tighter border-b border-brand w-fit pb-1 mb-6">Education</h3>
                         <div className="space-y-6">
                             <div>
-                                <p className="text-[10px] font-black text-white/30 uppercase tracking-widest">2020 - 2024</p>
+                                <p className="text-[10px] font-black text-white/30 uppercase tracking-widest">Sept 2020 - May 2024</p>
                                 <h4 className="text-sm font-bold text-white uppercase italic">MSIT, Delhi</h4>
                                 <p className="text-[11px] text-white/50 uppercase font-medium">B.Tech - CS (8.6 GPA)</p>
                             </div>
                             <div>
-                                <p className="text-[10px] font-black text-white/30 uppercase tracking-widest">2018 - 2020</p>
+                                <p className="text-[10px] font-black text-white/30 uppercase tracking-widest">Aug 2018 - Jun 2020</p>
                                 <h4 className="text-sm font-bold text-white uppercase italic">PUSA Institute, Delhi</h4>
                                 <p className="text-[11px] text-white/50 uppercase font-medium">Diploma in Mechanical Eng.</p>
                             </div>
@@ -110,9 +103,9 @@ const Hero = () => {
                         <h3 className="text-lg font-black text-white italic uppercase tracking-tighter border-b border-brand w-fit pb-1 mb-6">Experience</h3>
                         <div className="relative pl-6 border-l border-white/10 space-y-6">
                             {[
-                                { year: "2025", role: "Full Stack", company: "WriteCream AI" },
-                                { year: "2023", role: "Intern", company: "DesignsLab" },
-                                { year: "2022", role: "Trainee", company: "Internshala" }
+                                { year: "Jan 2025 - Present", role: "Full Stack", company: "WriteCream AI" },
+                                { year: "June 2023 - Sept 2023", role: "Intern", company: "DesignsLab" },
+                                { year: "June 2022 - Aug 2022", role: "Trainee", company: "Internshala" }
                             ].map((exp, i) => (
                                 <div key={i} className="relative">
                                     <div className="absolute -left-[27px] top-1 w-2.5 h-2.5 bg-brand rounded-full border-2 border-charcoal shadow-[0_0_10px_rgba(255,90,31,0.5)]" />
@@ -129,14 +122,19 @@ const Hero = () => {
                         <h3 className="text-lg font-black text-white italic uppercase tracking-tighter border-b border-brand w-fit pb-1 mb-6">Software Skills</h3>
                         <div className="grid grid-cols-2 gap-4">
                             {[
-                                { icon: "Py", name: "Python", desc: "AI Engine" },
-                                { icon: "Ts", name: "TS", desc: "Logic" },
-                                { icon: "Rc", name: "React", desc: "UI/UX" },
-                                { icon: "Nd", name: "Node", desc: "System" }
+                                { icon: "python", name: "Python", desc: "AI Engine" },
+                                { icon: "typescript", name: "TS", desc: "Logic" },
+                                { icon: "react", name: "React", desc: "UI/UX" },
+                                { icon: "nodedotjs", name: "Node", desc: "System" },
+                                { icon: "amazonaws", name: "AWS", desc: "Cloud" }
                             ].map(skill => (
                                 <div key={skill.name} className="flex gap-3 group/skill cursor-default">
-                                    <div className="w-10 h-10 flex-shrink-0 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center font-black text-xs text-brand group-hover/skill:bg-brand group-hover/skill:text-white transition-all duration-500">
-                                        {skill.icon}
+                                    <div className="w-10 h-10 flex-shrink-0 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center font-black text-xs text-brand group-hover/skill:bg-brand group-hover/skill:text-white transition-all duration-500 overflow-hidden">
+                                        <img
+                                            src={skill.name === "AWS" ? "/aws-svgrepo-com.svg" : `https://cdn.simpleicons.org/${skill.icon}`}
+                                            alt={skill.name}
+                                            className="w-6 h-6 object-contain"
+                                        />
                                     </div>
                                     <div>
                                         <p className="text-[10px] font-black text-white uppercase tracking-tight">{skill.name}</p>
@@ -147,7 +145,7 @@ const Hero = () => {
                         </div>
                         <div className="pt-6 border-t border-white/5">
                             <h4 className="text-[10px] font-black text-white/30 uppercase tracking-widest mb-2 italic">Specialist</h4>
-                            <p className="text-[11px] text-white/70 font-bold uppercase tracking-tighter">AI AGENTS / RAG / LLM / DEV OPS</p>
+                            <p className="text-[11px] text-white/70 font-bold uppercase tracking-tighter">LangChain / LangGraph / Agentic Workflows / RAG</p>
                         </div>
                     </div>
 

@@ -5,18 +5,18 @@ import { motion } from "framer-motion";
 
 const Skills = () => {
     const stack = [
-        { label: "Py", name: "Python", color: "text-blue-400" },
-        { label: "Js", name: "Javascript", color: "text-yellow-500" },
-        { label: "Ts", name: "TypeScript", color: "text-blue-500" },
-        { label: "Re", name: "React", color: "text-cyan-400" },
-        { label: "Nd", name: "Node.js", color: "text-green-500" },
-        { label: "Mg", name: "MongoDB", color: "text-emerald-500" },
-        { label: "Aw", name: "AWS", color: "text-orange-400" },
-        { label: "Dk", name: "Docker", color: "text-blue-600" },
+        { slug: "python", name: "Python", color: "text-blue-400" },
+        { slug: "typescript", name: "TypeScript", color: "text-blue-500" },
+        { slug: "react", name: "React", color: "text-cyan-400" },
+        { slug: "nodedotjs", name: "Node.js", color: "text-green-500" },
+        { slug: "tailwindcss", name: "Tailwind", color: "text-teal-400" },
+        { slug: "mongodb", name: "MongoDB", color: "text-emerald-500" },
+        { slug: "amazonaws", name: "AWS", color: "text-orange-400" },
+        { slug: "docker", name: "Docker", color: "text-blue-600" },
     ];
 
     const specialist = [
-        "Prompt engineering", "LLM orchestration", "Agentic workflows", "RAG pipelines", "Browser agents", "LangChain", "LangGraph", "N8N", "Redis", "CI/CD", "Kubernetes", "Linux", "Nginx", "PostgreSQL"
+        "LangChain", "LangGraph", "N8N", "Prompt engineering", "LLM orchestration", "Agentic workflows", "RAG pipelines", "Browser agents", "Vector Search", "Redis", "CI/CD", "Kubernetes", "Linux", "Nginx", "PostgreSQL", "Supabase", "Firebase", "Git", "C++", "Java"
     ];
 
     return (
@@ -53,8 +53,12 @@ const Skills = () => {
                                 transition={{ delay: i * 0.05 }}
                                 className="flex flex-col items-center gap-3 transition-colors"
                             >
-                                <div className={`software-icon !w-14 !h-14 !rounded-2xl ${item.color} group-hover:bg-brand/5 shadow-xl border-white/5`}>
-                                    <span className="text-lg">{item.label}</span>
+                                <div className={`software-icon !w-16 !h-16 !rounded-2xl group-hover:bg-white/5 shadow-xl border-white/5 flex items-center justify-center overflow-hidden bg-white/5 transition-all duration-300`}>
+                                    <img
+                                        src={item.name === "AWS" ? "/aws-svgrepo-com.svg" : `https://cdn.simpleicons.org/${item.slug}`}
+                                        alt={item.name}
+                                        className="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-300"
+                                    />
                                 </div>
                                 <span className="text-[10px] uppercase font-black tracking-widest text-white/40 group-hover:text-white/60">{item.name}</span>
                             </motion.div>

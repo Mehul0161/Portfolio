@@ -8,20 +8,20 @@ const Experience = () => {
         {
             company: "WriteCream AI",
             role: "Full Stack Web Developer",
-            period: "Jan 2025 – Present",
-            desc: "Built dynamic React.js frontend interfaces, improving user engagement by 25%. Developed RESTful APIs with Node.js/Express.js and integrated MongoDB to handle 5000+ concurrent users. Optimized AI content workflows, successfully reducing content generation time by 30%."
+            period: "January 2025 – Present",
+            desc: "Built dynamic React.js frontend interfaces, improving user engagement by 25% across AI tools. Developed RESTful APIs with Node.js/Express.js and integrated MongoDB to handle 5000+ concurrent users. Optimized AI content workflows, reducing generation time by 30%, and collaborated with design teams to boost satisfaction scores."
         },
         {
             company: "DesignsLab",
             role: "Full Stack Web Developer, Intern",
             period: "June 2023 – Sept 2023",
-            desc: "Spearheaded the development of a Student Result Management frontend in React.js, currently used by 200+ students. Architected the backend with Node.js/MySQL and implemented secure authentication systems with zero downtime."
+            desc: "Developed a Student Result Management frontend in React.js adopted by 200+ users. Architected backend systems with Node.js, Express, and MySQL; implemented secure authentication and data linking with zero downtime during peak usage."
         },
         {
             company: "Internshala",
             role: "Web Development Trainee",
             period: "June 2022 – Aug 2022",
-            desc: "Developed a real-time live Weather App using React.js. Engineered backend APIs with Node.js and Express for user authentication and historical data management, ensuring 99.9% API uptime during testing."
+            desc: "Engineered a live Weather Application frontend in React.js. Created robust backend APIs using Node.js and Express with MySQL integration for secure authentication and historical data management."
         }
     ];
 
