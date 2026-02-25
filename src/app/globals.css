@@ -15,8 +15,10 @@
 
 @layer components {
   .brutalist-header {
-    @apply font-impact uppercase leading-[0.85] tracking-tight text-[#d1d1d1] select-none;
-    text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.5);
+    @apply uppercase leading-[0.8] tracking-[-0.05em] text-[#f0f0f0] select-none;
+    font-family: var(--font-outfit), sans-serif;
+    font-weight: 900;
+    /* Removed text-shadow for a cleaner cinematic look */
   }
 
   .pill-badge {

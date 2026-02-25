@@ -5,46 +5,54 @@ import { motion } from "framer-motion";
 
 const Contents = () => {
     const sections = [
-        { id: "01", name: "Experience", desc: "WriteCream AI, DesignsLab, Internshala.", href: "#experience" },
-        { id: "02", name: "Projects", desc: "AI Code Gen, Browser Agents, ML Models.", href: "#projects" },
-        { id: "03", name: "Skills", desc: "Python, AI Agents, LangChain, DevOps.", href: "#skills" },
-        { id: "04", name: "Education", desc: "MSIT (B.Tech CS), PUSA (Mechanical).", href: "#education" },
+        { id: "01", name: "Experience", desc: "Work History", href: "#experience" },
+        { id: "02", name: "Projects", desc: "Featured Work", href: "#projects" },
+        { id: "03", name: "Skills", desc: "Technical Stack", href: "#skills" },
+        { id: "04", name: "Education", desc: "Background", href: "#education" },
     ];
 
     return (
-        <section className="mb-40" data-purpose="navigation-grid">
-            <motion.h2
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="brutalist-header text-[clamp(5rem,18vw,15rem)] mb-16"
-            >
-                CONTENTS
-            </motion.h2>
+        <section className="mb-60 px-4" id="contents">
+            <div className="flex flex-col items-center text-center mb-24">
+                <motion.span
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    className="text-brand font-black text-sm uppercase tracking-[0.3em] mb-4"
+                >
+                    Quick Navigation
+                </motion.span>
+                <motion.h2
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="brutalist-header text-[clamp(4rem,15vw,12rem)]"
+                >
+                    CONTENTS
+                </motion.h2>
+            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-12 gap-x-12 px-2">
+            <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-16">
                 {sections.map((section, i) => (
                     <motion.a
                         key={section.id}
                         href={section.href}
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: i * 0.1 }}
-                        className="flex flex-col gap-4 group cursor-pointer"
+                        className="group flex items-center gap-8 border-b border-white/5 pb-8 hover:border-brand/40 transition-all duration-500"
                     >
-                        <div className="flex items-start gap-4">
-                            <span className="px-5 py-1.5 bg-brand text-white text-[11px] font-black rounded-full shadow-lg shadow-brand/20 group-hover:scale-110 transition-transform">
-                                {section.id}
-                            </span>
-                            <div className="flex-1">
-                                <h3 className="text-3xl font-bold text-white group-hover:text-brand transition-colors uppercase italic tracking-tighter leading-none mb-2">
-                                    {section.name}
-                                </h3>
-                                <p className="text-[11px] text-white/30 font-black uppercase tracking-[0.2em] group-hover:text-white/60 transition-colors">
-                                    {section.desc}
-                                </p>
-                            </div>
+                        <span className="text-4xl md:text-6xl font-black text-white/10 group-hover:text-brand/20 transition-colors">
+                            {section.id}
+                        </span>
+                        <div className="flex flex-col">
+                            <h3 className="text-3xl md:text-5xl font-bold text-white uppercase italic tracking-tighter group-hover:text-brand transition-colors">
+                                {section.name}
+                            </h3>
+                            <p className="text-[10px] text-white/30 font-black uppercase tracking-[0.2em] mt-1">
+                                {section.desc}
+                            </p>
                         </div>
                     </motion.a>
                 ))}

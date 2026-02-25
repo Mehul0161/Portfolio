@@ -2,97 +2,101 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import ScrollFloat from "./ScrollFloat";
+import LogoLoop from "./LogoLoop";
+import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiPython, SiNodedotjs, SiMongodb, SiPostgresql, SiAmazon, SiDocker, SiVite, SiExpress } from 'react-icons/si';
 
 const Skills = () => {
-    const stack = [
-        { slug: "python", name: "Python", color: "text-blue-400" },
-        { slug: "typescript", name: "TypeScript", color: "text-blue-500" },
-        { slug: "react", name: "React", color: "text-cyan-400" },
-        { slug: "nodedotjs", name: "Node.js", color: "text-green-500" },
-        { slug: "tailwindcss", name: "Tailwind", color: "text-teal-400" },
-        { slug: "mongodb", name: "MongoDB", color: "text-emerald-500" },
-        { slug: "amazonaws", name: "AWS", color: "text-orange-400" },
-        { slug: "docker", name: "Docker", color: "text-blue-600" },
+    const techStack = [
+        { name: "Python", icon: "python", category: "Backend & AI" },
+        { name: "Typescript", icon: "typescript", category: "Core Logic" },
+        { name: "React", icon: "react", category: "Frontend" },
+        { name: "Node.js", icon: "nodedotjs", category: "Server" },
+        { name: "Next.js", icon: "nextdotjs", category: "Framework" },
+        { name: "MongoDB", icon: "mongodb", category: "Database" },
+        { name: "PostgreSQL", icon: "postgresql", category: "Database" },
+        { name: "AWS", icon: "amazonaws", category: "Cloud" },
     ];
 
-    const specialist = [
-        "LangChain", "LangGraph", "N8N", "Prompt engineering", "LLM orchestration", "Agentic workflows", "RAG pipelines", "Browser agents", "Vector Search", "Redis", "CI/CD", "Kubernetes", "Linux", "Nginx", "PostgreSQL", "Supabase", "Firebase", "Git", "C++", "Java"
+    const techLogos = [
+        { node: <SiPython />, title: "Python", href: "https://python.org" },
+        { node: <SiTypescript />, title: "TypeScript", href: "https://www.typescriptlang.org" },
+        { node: <SiReact />, title: "React", href: "https://react.dev" },
+        { node: <SiNodedotjs />, title: "Node.js", href: "https://nodejs.org" },
+        { node: <SiNextdotjs />, title: "Next.js", href: "https://nextjs.org" },
+        { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
+        { node: <SiMongodb />, title: "MongoDB", href: "https://mongodb.com" },
+        { node: <SiPostgresql />, title: "PostgreSQL", href: "https://postgresql.org" },
+        { node: <SiAmazon />, title: "AWS", href: "https://aws.amazon.com" },
+        { node: <SiDocker />, title: "Docker", href: "https://docker.com" },
+        { node: <SiVite />, title: "Vite", href: "https://vitejs.dev" },
+        { node: <SiExpress />, title: "Express", href: "https://expressjs.com" },
     ];
 
     return (
-        <section className="mb-24" id="skills">
-            <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="flex items-end gap-6 mb-12"
-            >
-                <h2 className="brutalist-header text-[clamp(4rem,10vw,8rem)]">SKILLS</h2>
-                <span className="pill-badge mb-6 h-8 w-12 !text-sm">03</span>
-            </motion.div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+        <section className="mb-60" id="skills">
+            <div className="px-4 flex flex-col items-center text-center mb-24">
+                <motion.span
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
-                    className="content-card p-10 group"
+                    className="text-brand font-black text-sm uppercase tracking-[0.3em] mb-4"
                 >
-                    <div className="flex items-center gap-4 mb-10">
-                        <div className="w-2 h-8 bg-brand rounded-full" />
-                        <h3 className="text-sm font-black text-white/50 uppercase tracking-[0.4em] italic">Development Stack</h3>
-                    </div>
-                    <div className="grid grid-cols-4 gap-x-6 gap-y-10">
-                        {stack.map((item, i) => (
-                            <motion.div
-                                key={item.name}
-                                whileHover={{ scale: 1.1, rotate: 2 }}
-                                initial={{ opacity: 0, scale: 0.8 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: i * 0.05 }}
-                                className="flex flex-col items-center gap-3 transition-colors"
-                            >
-                                <div className={`software-icon !w-16 !h-16 !rounded-2xl group-hover:bg-white/5 shadow-xl border-white/5 flex items-center justify-center overflow-hidden bg-white/5 transition-all duration-300`}>
-                                    <img
-                                        src={item.name === "AWS" ? "/aws-svgrepo-com.svg" : `https://cdn.simpleicons.org/${item.slug}`}
-                                        alt={item.name}
-                                        className="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-300"
-                                    />
-                                </div>
-                                <span className="text-[10px] uppercase font-black tracking-widest text-white/40 group-hover:text-white/60">{item.name}</span>
-                            </motion.div>
-                        ))}
-                    </div>
-                </motion.div>
+                    Technical Arsenal
+                </motion.span>
+                <ScrollFloat
+                    textClassName="brutalist-header text-[clamp(4rem,15vw,12rem)]"
+                >
+                    SKILLS
+                </ScrollFloat>
+            </div>
 
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.1 }}
-                    className="content-card p-10 group"
-                >
-                    <div className="flex items-center gap-4 mb-10">
-                        <div className="w-2 h-8 bg-brand rounded-full" />
-                        <h3 className="text-sm font-black text-white/50 uppercase tracking-[0.4em] italic">AI & Specialist Skills</h3>
-                    </div>
-                    <div className="flex flex-wrap gap-4">
-                        {specialist.map((skill, i) => (
-                            <motion.span
-                                key={skill}
-                                whileHover={{ scale: 1.05, backgroundColor: '#ff5a1f', color: '#fff' }}
-                                initial={{ opacity: 0, x: -10 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: i * 0.03 }}
-                                className="pill-badge !bg-white/5 !text-white/60 !border !border-white/10 !px-5 !py-3 !text-xs cursor-default font-black italic tracking-wider transition-all duration-300"
-                            >
-                                {skill}
-                            </motion.span>
-                        ))}
-                    </div>
-                </motion.div>
+            <div className="px-4 max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 mb-32">
+                {techStack.map((tech, i) => (
+                    <motion.div
+                        key={tech.name}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: i * 0.05 }}
+                        className="group bg-white/5 border border-white/5 p-8 rounded-2xl flex flex-col items-center text-center space-y-4 hover:border-brand/30 transition-all hover:-translate-y-2 backdrop-blur-sm"
+                    >
+                        <div className="w-16 h-16 flex items-center justify-center grayscale group-hover:grayscale-0 transition-all duration-500">
+                            <img
+                                src={tech.name === "AWS" ? "/aws-svgrepo-com.svg" : `https://cdn.simpleicons.org/${tech.icon}`}
+                                alt={tech.name}
+                                className="w-10 h-10 object-contain"
+                            />
+                        </div>
+                        <div>
+                            <p className="text-white font-bold uppercase text-[12px] tracking-widest">{tech.name}</p>
+                            <p className="text-white/20 text-[9px] font-black uppercase mt-1 tracking-tighter">{tech.category}</p>
+                        </div>
+                    </motion.div>
+                ))}
+            </div>
+
+            {/* Full Width Logo Loop - Breaking out of container */}
+            <div className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] overflow-hidden py-6 relative border-y border-white/5 bg-white/[0.02]">
+                <LogoLoop
+                    logos={techLogos}
+                    speed={80}
+                    direction="left"
+                    logoHeight={50}
+                    gap={100}
+                    pauseOnHover={true}
+                    scaleOnHover={true}
+                    fadeOut={true}
+                    fadeOutColor="#121212"
+                />
+            </div>
+
+            <div className="px-4 max-w-4xl mx-auto mt-32 p-12 border border-brand/20 bg-brand/5 rounded-3xl text-center relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand to-transparent" />
+                <h3 className="text-white/40 font-black uppercase text-xs tracking-[0.4em] mb-6">Current Focus</h3>
+                <p className="text-2xl md:text-4xl text-white font-bold uppercase italic tracking-tighter leading-tight">
+                    Autonomous AI Agents / LangChain / <span className="text-brand">Agentic Workflows</span> / RAG Architectures
+                </p>
             </div>
         </section>
     );

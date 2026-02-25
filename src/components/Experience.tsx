@@ -2,77 +2,76 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import ScrollFloat from "./ScrollFloat";
 
 const Experience = () => {
     const experiences = [
         {
             company: "WriteCream AI",
             role: "Full Stack Web Developer",
-            period: "January 2025 – Present",
-            desc: "Built dynamic React.js frontend interfaces, improving user engagement by 25% across AI tools. Developed RESTful APIs with Node.js/Express.js and integrated MongoDB to handle 5000+ concurrent users. Optimized AI content workflows, reducing generation time by 30%, and collaborated with design teams to boost satisfaction scores."
+            period: "2025 – Present",
+            desc: "Built dynamic React.js frontend interfaces, improving user engagement by 25% across AI tools. Developed RESTful APIs with Node.js/Express.js and integrated MongoDB to handle 5000+ concurrent users."
         },
         {
             company: "DesignsLab",
-            role: "Full Stack Web Developer, Intern",
-            period: "June 2023 – Sept 2023",
-            desc: "Developed a Student Result Management frontend in React.js adopted by 200+ users. Architected backend systems with Node.js, Express, and MySQL; implemented secure authentication and data linking with zero downtime during peak usage."
+            role: "Full Stack Developer Intern",
+            period: "2023 – 2024",
+            desc: "Developed a Student Result Management frontend in React.js adopted by 200+ users. Architected backend systems with Node.js, Express, and MySQL."
         },
         {
             company: "Internshala",
             role: "Web Development Trainee",
-            period: "June 2022 – Aug 2022",
-            desc: "Engineered a live Weather Application frontend in React.js. Created robust backend APIs using Node.js and Express with MySQL integration for secure authentication and historical data management."
+            period: "2022",
+            desc: "Engineered a live Weather Application frontend in React.js. Created robust backend APIs using Node.js and Express."
         }
     ];
 
     return (
-        <section className="mb-24" id="experience">
-            <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="flex items-end gap-6 mb-12"
-            >
-                <h2 className="brutalist-header text-[clamp(4rem,10vw,8rem)]">EXPERIENCE</h2>
-                <span className="pill-badge mb-6 h-8 w-12 !text-sm">01</span>
-            </motion.div>
+        <section className="mb-60 px-4" id="experience">
+            <div className="flex flex-col items-center text-center mb-24">
+                <motion.span
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    className="text-brand font-black text-sm uppercase tracking-[0.3em] mb-4"
+                >
+                    Professional Journey
+                </motion.span>
+                <ScrollFloat
+                    textClassName="brutalist-header text-[clamp(4rem,15vw,12rem)]"
+                >
+                    EXPERIENCE
+                </ScrollFloat>
+            </div>
 
-            <div className="content-card p-10 md:p-16 border-white/5 relative overflow-hidden shadow-inner">
-                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand/5 blur-[120px] rounded-full translate-x-1/2 -translate-y-1/2" />
-
-                <div className="vertical-timeline space-y-20 relative z-10">
-                    {experiences.map((exp, i) => (
-                        <motion.div
-                            key={i}
-                            initial={{ opacity: 0, x: 20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true, margin: "-100px" }}
-                            transition={{ delay: i * 0.2 }}
-                            className="relative"
-                        >
-                            {/* Dot with Pulse Effect */}
-                            <div className="timeline-dot group-hover:scale-125 transition-transform">
-                                <div className="absolute inset-0 bg-brand rounded-full animate-ping opacity-30" />
-                            </div>
-
-                            <div className="group">
-                                <p className="text-[10px] font-black tracking-[0.3em] text-brand/60 mb-2 uppercase italic">
-                                    {exp.period}
-                                </p>
-                                <h4 className="text-3xl md:text-5xl font-black text-white uppercase italic tracking-tighter mb-2 group-hover:text-brand transition-colors duration-500">
-                                    {exp.company}
-                                </h4>
-                                <div className="flex items-center gap-3 mb-6">
-                                    <div className="h-[2px] w-12 bg-brand" />
-                                    <p className="text-brand font-black text-xs uppercase tracking-widest">{exp.role}</p>
-                                </div>
-                                <p className="text-base md:text-xl leading-relaxed max-w-2xl text-white/50 font-medium group-hover:text-white/80 transition-colors duration-500">
-                                    {exp.desc}
-                                </p>
-                            </div>
-                        </motion.div>
-                    ))}
-                </div>
+            <div className="max-w-6xl mx-auto space-y-32">
+                {experiences.map((exp, i) => (
+                    <motion.div
+                        key={i}
+                        initial={{ opacity: 0, y: 40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: i * 0.1 }}
+                        className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start relative pb-16 border-b border-white/5 last:border-0"
+                    >
+                        <div className="md:col-span-4">
+                            <p className="text-brand font-black text-xs uppercase tracking-widest mb-4 font-mono">
+                                {exp.period}
+                            </p>
+                            <h3 className="text-4xl md:text-5xl font-bold text-white uppercase italic tracking-tighter leading-none mb-2">
+                                {exp.company}
+                            </h3>
+                            <p className="text-white/40 font-bold uppercase text-[12px] tracking-wider">
+                                {exp.role}
+                            </p>
+                        </div>
+                        <div className="md:col-span-8">
+                            <p className="text-xl md:text-2xl text-white/60 leading-relaxed font-medium">
+                                {exp.desc}
+                            </p>
+                        </div>
+                    </motion.div>
+                ))}
             </div>
         </section>
     );

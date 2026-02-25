@@ -2,148 +2,103 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { FiArrowUpRight, FiExternalLink, FiShare2 } from "react-icons/fi";
+import ScrollFloat from "./ScrollFloat";
+import { FiArrowUpRight } from "react-icons/fi";
 
 const Projects = () => {
     const projects = [
         {
             title: "AI Code Generator",
-            link: "https://trymax.dev",
-            badges: ["AI / AUTOMATION", "SDK"],
-            stack: "React / Node / TS / Daytona",
+            link: "https://trymax.dev/",
             type: "SaaS Platform",
             year: "2024",
-            desc: "Built full-stack app generating frontend code (React, Vue, Next.js) from prompts with real-time preview under 30 seconds. Integrated Daytona SDK for interactive previews; handled complex multi-environment components.",
-            icon: (
-                <svg viewBox="0 0 24 24" fill="none" className="w-20 h-20 text-brand opacity-60 group-hover:opacity-100 transition-opacity duration-500" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7 8L3 12L7 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    <path d="M17 8L21 12L17 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    <path d="M14 4L10 20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    <path d="M18 4L22 8L18 12" stroke="currentColor" strokeWidth="1" opacity="0.4" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-            )
+            stack: "React / Node / TS",
+            desc: "Built full-stack app generating frontend code from prompts with real-time preview under 30 seconds.",
+            img: "/Screenshot 2026-02-25 152843.png"
         },
         {
             title: "Intelligent Browser Agent",
             link: "https://tryleo.io",
-            badges: ["AI / AGENTIC", "BROWSER"],
-            stack: "Next.js / LangChain / Playwright",
             type: "AI Utility",
             year: "2024",
-            desc: "Built an AI-powered browser agent for autonomous tasks combining web scraping, automation, and reasoning. Live previews implemented using Next.js + Daytona + VNC, completing 50+ tasks/hour.",
-            icon: (
-                <svg viewBox="0 0 24 24" fill="none" className="w-20 h-20 text-brand opacity-60 group-hover:opacity-100 transition-opacity duration-500" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" strokeWidth="2" />
-                    <path d="M3 10H21" stroke="currentColor" strokeWidth="2" />
-                    <circle cx="8" cy="7" r="1" fill="currentColor" />
-                    <circle cx="11" cy="7" r="1" fill="currentColor" />
-                    <path d="M12 14C12 14 13.5 16 16 16C18.5 16 20 14 20 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                </svg>
-            )
-        },
-        {
-            title: "Food Ordering System",
-            link: "#",
-            badges: ["FULL STACK", "HEALTH"],
-            stack: "React / Node / MySQL",
-            type: "E-Commerce",
-            year: "2023",
-            desc: "Helps people recognize food types and nutritional information with a personalized interface improving healthy meal selection. Optimized for quick ordering and dietary tracking.",
-            icon: (
-                <svg viewBox="0 0 24 24" fill="none" className="w-20 h-20 text-brand opacity-60 group-hover:opacity-100 transition-opacity duration-500" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3 6H21L19 16H5L3 6Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
-                    <path d="M8 6V4H16V6" stroke="currentColor" strokeWidth="2" />
-                    <circle cx="9" cy="20" r="1" fill="currentColor" />
-                    <circle cx="15" cy="20" r="1" fill="currentColor" />
-                </svg>
-            )
-        },
-        {
-            title: "Food Recognition ML",
-            link: "https://colab.research.google.com/drive/1om-ppmZWNVYZOEk_AlAcnAevIw9Se3d_?usp=sharing",
-            badges: ["AI / ML", "TENSORFLOW"],
-            stack: "Python / TensorFlow / Colab",
-            type: "Dataset / Model",
-            year: "2023",
-            desc: "Developed a Machine Learning model recognizing food images and listing nutritional details. Achieved high accuracy across diverse image datasets using deep learning and convolutional neural networks.",
-            icon: (
-                <svg viewBox="0 0 24 24" fill="none" className="w-20 h-20 text-brand opacity-60 group-hover:opacity-100 transition-opacity duration-500" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17Z" stroke="currentColor" strokeWidth="2" />
-                    <path d="M3 12H5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                    <path d="M19 12H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                    <path d="M12 3V5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                    <path d="M12 19V21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                </svg>
-            )
+            stack: "Next.js / LangChain",
+            desc: "Built an AI-powered browser agent for autonomous tasks combining web scraping and reasoning.",
+            img: "/projects/browser-agent.png"
         }
     ];
 
     return (
-        <section className="mb-40" id="projects">
-            <div className="relative mb-20 flex items-start justify-between">
-                <motion.h2
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+        <section className="mb-60 px-4" id="projects">
+            <div className="flex flex-col items-center text-center mb-24">
+                <motion.span
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
-                    className="brutalist-header text-[clamp(5rem,15vw,12rem)] leading-[0.7]"
+                    className="text-brand font-black text-sm uppercase tracking-[0.3em] mb-4"
+                >
+                    Creative Selection
+                </motion.span>
+                <ScrollFloat
+                    textClassName="brutalist-header text-[clamp(4rem,15vw,12rem)]"
                 >
                     PROJECTS
-                </motion.h2>
-                <div className="bg-brand text-white px-6 py-2 rounded-full font-black text-xs uppercase tracking-widest mt-4">
-                    02
-                </div>
+                </ScrollFloat>
             </div>
 
-            <div className="space-y-24 px-2">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
                 {projects.map((project, i) => (
                     <motion.div
                         key={i}
-                        initial={{ opacity: 0, y: 40 }}
-                        whileInView={{ opacity: 1, y: 0 }}
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        className="content-card border-white/10 group relative py-12 overflow-hidden"
+                        transition={{ delay: i * 0.1 }}
+                        className="group relative flex flex-col gap-6"
                     >
-                        <div className="px-8 md:px-12 flex flex-col lg:flex-row gap-12 items-start">
-                            {/* Left: Square logo/image area */}
-                            <div className="w-full lg:w-1/4 aspect-square bg-[#1a1a1a] rounded-xl border border-white/5 flex items-center justify-center p-8 group-hover:border-brand/40 transition-colors shadow-2xl relative overflow-hidden">
-                                <div className="absolute inset-0 bg-brand/5 group-hover:bg-brand/10 transition-colors" />
-                                {project.icon}
+                        <a
+                            href={project.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="aspect-[16/10] bg-white/5 border border-white/10 rounded-2xl overflow-hidden relative"
+                        >
+                            <div className="absolute inset-0 bg-brand/5 group-hover:bg-brand/0 transition-colors z-10" />
+                            {project.img ? (
+                                <img
+                                    src={project.img}
+                                    alt={project.title}
+                                    className="w-full h-full object-cover grayscale brightness-[0.7] group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-110 transition-all duration-700"
+                                />
+                            ) : (
+                                <div className="absolute inset-0 flex items-center justify-center text-white/5 font-black text-9xl select-none">
+                                    {project.title.charAt(0)}
+                                </div>
+                            )}
+                            <div className="absolute bottom-6 left-6 z-20">
+                                <span className="px-4 py-2 bg-black/50 backdrop-blur-md rounded-full text-[10px] font-black uppercase tracking-widest text-white border border-white/10">
+                                    {project.type}
+                                </span>
                             </div>
+                        </a>
 
-                            {/* Right: Content details */}
-                            <div className="flex-1 space-y-8">
-                                <div>
-                                    <h3 className="text-4xl md:text-6xl font-black text-white uppercase italic tracking-tighter mb-4 leading-none group-hover:text-brand transition-colors duration-500">
-                                        {project.title}
-                                    </h3>
-                                    <p className="text-white/50 text-base md:text-lg leading-relaxed max-w-2xl font-medium group-hover:text-white/80 transition-colors duration-500">
-                                        {project.desc}
-                                    </p>
-                                </div>
-
-                                {/* Detail Table - strictly following Reference Image 1 structure */}
-                                <div className="grid grid-cols-2 md:grid-cols-3 gap-8 pt-8 border-t border-white/5 max-w-2xl">
-                                    <div>
-                                        <p className="text-[10px] font-black text-white/20 uppercase tracking-[0.3em] mb-2 italic italic">Architecture</p>
-                                        <div className="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
-                                            <span className="w-1.5 h-1.5 bg-brand rounded-full" /> {project.stack}
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <p className="text-[10px] font-black text-white/20 uppercase tracking-[0.3em] mb-2 italic">Sector</p>
-                                        <p className="text-sm font-bold text-white uppercase tracking-wider">{project.type}</p>
-                                    </div>
-                                    <div>
-                                        <p className="text-[10px] font-black text-white/20 uppercase tracking-[0.3em] mb-2 italic">Year</p>
-                                        <p className="text-sm font-bold text-white uppercase tracking-wider">{project.year}</p>
-                                    </div>
-                                </div>
-
-                                <div className="pt-4 flex gap-4">
-                                    <a href={project.link} className="text-[10px] font-black uppercase tracking-widest text-[#ff5a1f] underline decoration-brand/30 underline-offset-4 hover:decoration-brand transition-all">
-                                        Visit Platform →
-                                    </a>
-                                </div>
+                        <div className="space-y-4 px-2">
+                            <div className="flex items-start justify-between">
+                                <h3 className="text-3xl md:text-5xl font-bold text-white uppercase italic tracking-tighter leading-none group-hover:text-brand transition-colors">
+                                    {project.title}
+                                </h3>
+                                <motion.a
+                                    href={project.link}
+                                    whileHover={{ scale: 1.1, rotate: 45 }}
+                                    className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white group-hover:bg-brand group-hover:border-brand transition-all"
+                                >
+                                    <FiArrowUpRight className="text-2xl" />
+                                </motion.a>
+                            </div>
+                            <p className="text-lg text-white/50 leading-relaxed font-medium">
+                                {project.desc}
+                            </p>
+                            <div className="flex gap-4 pt-2">
+                                <span className="text-[10px] font-black text-brand uppercase tracking-widest">{project.stack}</span>
+                                <span className="text-[10px] font-black text-white/20 uppercase tracking-widest">— {project.year}</span>
                             </div>
                         </div>
                     </motion.div>
