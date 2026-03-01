@@ -16,7 +16,7 @@ export default function Home() {
       {/* Hero is full-width */}
       <Hero />
 
-      <div className="max-w-7xl mx-auto px-4 md:px-8 space-y-40">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 space-y-24 md:space-y-40">
         <About />
         <Contents />
         <Experience />

@@ -28,18 +28,18 @@ const Projects = () => {
     ];
 
     return (
-        <section className="mb-60 px-4" id="projects">
-            <div className="flex flex-col items-center text-center mb-24">
+        <section className="mb-32 md:mb-60 px-4" id="projects">
+            <div className="flex flex-col items-center text-center mb-16 md:mb-24">
                 <motion.span
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
-                    className="text-brand font-black text-sm uppercase tracking-[0.3em] mb-4"
+                    className="text-brand font-black text-xs md:text-sm uppercase tracking-[0.3em] mb-4"
                 >
                     Creative Selection
                 </motion.span>
                 <ScrollFloat
-                    textClassName="brutalist-header text-[clamp(4rem,15vw,12rem)]"
+                    textClassName="brutalist-header text-[clamp(2rem,12vw,12rem)]"
                 >
                     PROJECTS
                 </ScrollFloat>
@@ -69,12 +69,12 @@ const Projects = () => {
                                     className="w-full h-full object-cover grayscale brightness-[0.7] group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-110 transition-all duration-700"
                                 />
                             ) : (
-                                <div className="absolute inset-0 flex items-center justify-center text-white/5 font-black text-9xl select-none">
+                                <div className="absolute inset-0 flex items-center justify-center text-white/5 font-black text-7xl md:text-9xl select-none">
                                     {project.title.charAt(0)}
                                 </div>
                             )}
-                            <div className="absolute bottom-6 left-6 z-20">
-                                <span className="px-4 py-2 bg-black/50 backdrop-blur-md rounded-full text-[10px] font-black uppercase tracking-widest text-white border border-white/10">
+                            <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 z-20">
+                                <span className="px-3 py-1.5 md:px-4 md:py-2 bg-black/50 backdrop-blur-md rounded-full text-[8px] md:text-[10px] font-black uppercase tracking-widest text-white border border-white/10">
                                     {project.type}
                                 </span>
                             </div>
@@ -82,23 +82,23 @@ const Projects = () => {
 
                         <div className="space-y-4 px-2">
                             <div className="flex items-start justify-between">
-                                <h3 className="text-3xl md:text-5xl font-bold text-white uppercase italic tracking-tighter leading-none group-hover:text-brand transition-colors">
+                                <h3 className="text-2xl md:text-5xl font-bold text-white uppercase italic tracking-tighter leading-none group-hover:text-brand transition-colors">
                                     {project.title}
                                 </h3>
                                 <motion.a
                                     href={project.link}
                                     whileHover={{ scale: 1.1, rotate: 45 }}
-                                    className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white group-hover:bg-brand group-hover:border-brand transition-all"
+                                    className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/10 flex items-center justify-center text-white group-hover:bg-brand group-hover:border-brand transition-all"
                                 >
-                                    <FiArrowUpRight className="text-2xl" />
+                                    <FiArrowUpRight className="text-xl md:text-2xl" />
                                 </motion.a>
                             </div>
-                            <p className="text-lg text-white/50 leading-relaxed font-medium">
+                            <p className="text-base md:text-lg text-white/50 leading-relaxed font-medium">
                                 {project.desc}
                             </p>
                             <div className="flex gap-4 pt-2">
-                                <span className="text-[10px] font-black text-brand uppercase tracking-widest">{project.stack}</span>
-                                <span className="text-[10px] font-black text-white/20 uppercase tracking-widest">— {project.year}</span>
+                                <span className="text-[9px] md:text-[10px] font-black text-brand uppercase tracking-widest">{project.stack}</span>
+                                <span className="text-[9px] md:text-[10px] font-black text-white/20 uppercase tracking-widest">— {project.year}</span>
                             </div>
                         </div>
                     </motion.div>

@@ -27,24 +27,24 @@ const Experience = () => {
     ];
 
     return (
-        <section className="mb-60 px-4" id="experience">
-            <div className="flex flex-col items-center text-center mb-24">
+        <section className="mb-32 md:mb-60 px-4" id="experience">
+            <div className="flex flex-col items-center text-center mb-16 md:mb-24">
                 <motion.span
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
-                    className="text-brand font-black text-sm uppercase tracking-[0.3em] mb-4"
+                    className="text-brand font-black text-xs md:text-sm uppercase tracking-[0.3em] mb-4"
                 >
                     Professional Journey
                 </motion.span>
                 <ScrollFloat
-                    textClassName="brutalist-header text-[clamp(4rem,15vw,12rem)]"
+                    textClassName="brutalist-header text-[clamp(2rem,12vw,12rem)]"
                 >
                     EXPERIENCE
                 </ScrollFloat>
             </div>
 
-            <div className="max-w-6xl mx-auto space-y-32">
+            <div className="max-w-6xl mx-auto space-y-20 md:space-y-32">
                 {experiences.map((exp, i) => (
                     <motion.div
                         key={i}
@@ -52,21 +52,21 @@ const Experience = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: i * 0.1 }}
-                        className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start relative pb-16 border-b border-white/5 last:border-0"
+                        className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-start relative pb-12 md:pb-16 border-b border-white/5 last:border-0"
                     >
                         <div className="md:col-span-4">
-                            <p className="text-brand font-black text-xs uppercase tracking-widest mb-4 font-mono">
+                            <p className="text-brand font-black text-[10px] md:text-xs uppercase tracking-widest mb-3 md:mb-4 font-mono">
                                 {exp.period}
                             </p>
-                            <h3 className="text-4xl md:text-5xl font-bold text-white uppercase italic tracking-tighter leading-none mb-2">
+                            <h3 className="text-3xl md:text-5xl font-bold text-white uppercase italic tracking-tighter leading-none mb-2">
                                 {exp.company}
                             </h3>
-                            <p className="text-white/40 font-bold uppercase text-[12px] tracking-wider">
+                            <p className="text-white/40 font-bold uppercase text-[10px] md:text-[12px] tracking-wider">
                                 {exp.role}
                             </p>
                         </div>
                         <div className="md:col-span-8">
-                            <p className="text-xl md:text-2xl text-white/60 leading-relaxed font-medium">
+                            <p className="text-lg md:text-2xl text-white/60 leading-relaxed font-medium">
                                 {exp.desc}
                             </p>
                         </div>

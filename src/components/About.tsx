@@ -6,30 +6,30 @@ import ScrollFloat from "./ScrollFloat";
 
 const About = () => {
     return (
-        <section className="mb-60 px-4" id="about">
+        <section className="mb-32 md:mb-60 px-4" id="about">
             <div className="max-w-6xl mx-auto">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="relative"
+                        className="relative order-2 lg:order-1"
                     >
                         <motion.span
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: true }}
-                            className="text-brand font-black text-sm uppercase tracking-[0.3em] mb-4 block"
+                            className="text-brand font-black text-xs md:text-sm uppercase tracking-[0.3em] mb-4 block"
                         >
                             The Persona
                         </motion.span>
                         <ScrollFloat
-                            containerClassName="mb-12"
-                            textClassName="brutalist-header text-[clamp(4rem,10vw,8rem)]"
+                            containerClassName="mb-10 md:mb-12"
+                            textClassName="brutalist-header text-[clamp(2.5rem,10vw,8rem)]"
                         >
                             STORY
                         </ScrollFloat>
-                        <div className="space-y-6 text-xl md:text-2xl text-white/60 leading-relaxed font-medium">
+                        <div className="space-y-6 text-lg md:text-2xl text-white/60 leading-relaxed font-medium px-1">
                             <p>
                                 I am a Full Stack Engineer dedicated to bridging the gap between <span className="text-white italic">brutal architectural efficiency</span> and <span className="text-brand italic">cinematic user experiences</span>.
                             </p>
@@ -46,7 +46,7 @@ const About = () => {
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        className="relative aspect-square"
+                        className="relative aspect-square max-w-[400px] lg:max-w-none mx-auto lg:mx-0 order-1 lg:order-2"
                     >
                         <div className="absolute inset-0 border-2 border-brand/20 rounded-3xl rotate-3" />
                         <div className="absolute inset-0 bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl overflow-hidden shadow-2xl">

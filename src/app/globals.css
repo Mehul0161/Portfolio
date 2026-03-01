@@ -11,6 +11,17 @@
     @apply bg-[#121212] text-[#d1d1d1] font-sans overflow-x-hidden antialiased;
     background-image: radial-gradient(circle at 50% -20%, #1a1a1a 0%, #121212 100%);
   }
+
+  ::selection {
+    background-color: #ff5a1f !important;
+    color: white !important;
+    -webkit-text-fill-color: white !important;
+  }
+
+  ::-moz-selection {
+    background-color: #ff5a1f !important;
+    color: white !important;
+  }
 }
 
 @layer components {
